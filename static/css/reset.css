@@ -4,12 +4,12 @@
 */
 
 html, body, div, span,
-h1, h2, h3, h4, h5, h6, p, pre,
-a,code, em, img, strong, sub, sup, tt, var,
+h1, h2, h3, h4, h5, h6, 
+a,code, em, img, strong, input,
 b, u, i,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
-table, tbody, tfoot, thead, tr, th, td, footer, header, hgroup, 
+footer, header, hgroup, 
 menu, nav, output, section {
 	margin: 0;
 	padding: 0;
@@ -17,6 +17,7 @@ menu, nav, output, section {
 	font-size: 100%;
 	font: inherit;
 	vertical-align: baseline;
+	box-sizing: border-box;
 }
 /* HTML5 display-role reset for older browsers */
 footer, header, nav, section {
@@ -24,6 +25,7 @@ footer, header, nav, section {
 }
 body {
 	line-height: 1;
+	min-height: 100vh;
 }
 ol, ul {
 	list-style: none;
