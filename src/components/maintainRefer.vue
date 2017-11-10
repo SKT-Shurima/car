@@ -1,14 +1,15 @@
 <template>
 	<div>
 		<mt-header fixed title="出险次数查询">
-  			<mt-button slot="left" icon='back'>
+  			<mt-button slot="left" icon='back' @touchstart.preventDefault.native='_back'>
   			</mt-button>
   		</mt-header>
   		<div class="contain">
   			<div class="seach-res">
   				查询车辆: jdhscbdcdsb
   			</div>
-  			<v-cell :title='title' :lists='lists'></v-cell>
+  			<v-cell :title='title' :lists='lists'>
+  			</v-cell>
   		</div>
 	</div>
 </template>
@@ -26,7 +27,7 @@
 		},
 		components:{
 			vCell
-		}
+		},
 	}	
 </script>
 <style type="text/css" lang='scss' scoped>

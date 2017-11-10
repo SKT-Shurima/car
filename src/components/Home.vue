@@ -9,7 +9,7 @@
   		</mt-header>
   		<div class="content">
   			<div class="protol color-gray">
-  				<i class="icon icon-check-off" :class='check?"icon-check-off":"icon-check-on"' @touchstart='check=!check'></i>
+  				<i class="icon icon-check-off" :class='check?"icon-check-on":"icon-check-off"' @touchstart='check=!check'></i>
   				我已经同意<a href="" class="color-primary">《有个车车辆查询协议》</a>
   			</div>
   			<ul class="theme">
@@ -49,6 +49,10 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style type="text/css" lang='scss' scoped>
+  .wrap{
+    background-color: #fff;
+    min-height: 100vh;
+  }
 	.content{
 	  padding: 40px .26rem 40px;
 	}

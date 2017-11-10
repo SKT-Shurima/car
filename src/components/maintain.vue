@@ -14,10 +14,10 @@
 				</dt>
 				<dd>
 					<div>
-						<input type="text" name="" placeholder="17位车架号(VIN)">
+						<input type="text" name="" placeholder="17位车架号(VIN)" v-model='num' @keyup="num=num.toUpperCase()">
 					</div>
 					<div>
-						<mt-button type="primary" size='small'>查询</mt-button>
+						<mt-button type="primary" size='small' @touchstart.native='check'>查询</mt-button>
 					</div>
 				</dd>
 			</dl>
@@ -25,5 +25,15 @@
 	</div>
 </template>
 <script type="text/javascript">
-	
+	export default {
+		data(){
+			return {
+				num: ''
+			}
+		},
+		mounted(){
+			this.$nextTick(()=>{
+			})
+		}
+	}
 </script>

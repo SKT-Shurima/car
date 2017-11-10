@@ -35,10 +35,10 @@
 	}
 	.key{
 		float: left;
-		width: 40%;
+		width: 32%;
 	}
 	.value{
 		float: left;
-		width: 60%;
+		width: 68%;
 	}
 </style>
