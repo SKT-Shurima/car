@@ -1,8 +1,9 @@
 <template>
-	<div>
+	<div class="wrap">
 		<mt-header fixed title="维修保养查询">
-  			<mt-button slot="left" icon='back'>
-  			</mt-button>
+  			<span slot='left'>
+  				<i class="mintui mintui-back"></i>
+  			</span>
   		</mt-header>
 		<div class="contain">
 			<div class="show-img">
@@ -27,3 +28,5 @@
 <script type="text/javascript">
 	
 </script>
+<style type="text/css">
+</style>

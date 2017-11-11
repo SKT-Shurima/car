@@ -15,6 +15,7 @@
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",
+    "axios": "^0.17.0",
     "babel-core": "^6.22.1",
     "babel-loader": "^7.1.1",
     "babel-plugin-component": "^0.10.1",
@@ -33,6 +34,7 @@
     "friendly-errors-webpack-plugin": "^1.6.1",
     "html-webpack-plugin": "^2.30.1",
     "http-proxy-middleware": "^0.17.3",
+    "md5": "^2.2.1",
     "mint-ui": "^2.2.10",
     "node-sass": "^4.6.0",
     "opn": "^5.1.0",
@@ -51,6 +53,7 @@
     "vue-loader": "^13.3.0",
     "vue-style-loader": "^3.0.1",
     "vue-template-compiler": "^2.5.2",
+    "vueg": "^1.2.7",
     "webpack": "^3.6.0",
     "webpack-bundle-analyzer": "^2.9.0",
     "webpack-dev-middleware": "^1.12.0",

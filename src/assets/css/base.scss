@@ -83,6 +83,7 @@
  }
 .contain{
   padding-top: 40px;
+  min-height: 100vh;
 }
 .icon{
   display: inline-block;
@@ -150,7 +151,10 @@
   background-color: #007FD6;
   vertical-align: middle;
 }
-//
+.mint-button{
+  width: 100%;
+  height: .8rem;
+}
 table{
   width: 100%
 }

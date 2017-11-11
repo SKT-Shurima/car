@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+import login  from '@/components/login';
 import Home from '@/components/Home';
 import maintain from  '@/components/maintain';
 import maintainRefer from '@/components/maintainRefer';
@@ -18,7 +19,13 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'Home',
+      name: 'login',
+      component: login
+    },{
+      path: '/login',
+      component: login 
+    },{
+      path: '/home',
       component: Home
     },{
     	path: '/maintain',

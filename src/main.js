@@ -5,15 +5,20 @@ import App from './App'
 import router from './router'
 import './assets/js/rem';
 import './assets/css/base';
-import'mint-ui/lib/style.min.css';
+import 'mint-ui/lib/style.min.css';
 import { Header,Button,Cell } from 'mint-ui';
+import md5 from 'md5';
+import mixins from './assets/js/mixins';
+import vueg from 'vueg/src/index';
+import 'vueg/css/transition-min.css';
 
 
 Vue.config.productionTip = false;
 Vue.component(Header.name, Header);
 Vue.component(Button.name, Button);
 Vue.component(Cell.name, Cell);
-
+Vue.mixin(mixins);
+Vue.use(vueg, router)
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

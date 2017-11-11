@@ -49,6 +49,9 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style type="text/css" lang='scss' scoped>
+  .wrap{
+    min-height: 100vh;
+  }
 	.content{
 	  padding: 40px .26rem 40px;
 	}
