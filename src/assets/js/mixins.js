@@ -12,10 +12,9 @@ const  mixins = {
             }
             return reqParams ;
         },
-        errcode(errcode,message){
-            let _this=  this ;
-            if (errcode===-101) {
-                this.$router.replace('./login');
+        errorInfo(errcode,message){
+            if (errcode===99) {
+                this.$router.replace('/');
             }else{
                 
             }

@@ -6,7 +6,7 @@
 html, body, div, span,
 h1, h2, h3, h4, h5, h6, 
 a,code, em, img, strong, input,
-b, u, i,
+b, u, i,p,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 footer, header, hgroup, 
@@ -25,6 +25,7 @@ footer, header, nav, section {
 }
 body {
 	line-height: 1;
+	min-height: 100vh;
 }
 ol, ul {
 	list-style: none;
@@ -34,12 +35,11 @@ strong,em,i{
 }
 table {
 	border-collapse: collapse;
-	border-spacing: 0;
 }
 a{
 	color: #fff;
 	text-decoration: none;
 }
-.mint-header-button.is-left{
-		width: 16px;
-	}
+input{
+	outline: none;
+}
