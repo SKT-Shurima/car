@@ -211,3 +211,17 @@ table{
         border:1px solid #ddd;
         }
     }
+  .mint-indexlist-content{
+    margin-right: 0px !important; 
+  }
+  .mint-indexlist-nav{
+    border-left: none !important;
+    background-color: transparent;
+    padding-bottom: .8rem;
+  }
+  .mint-indexlist-navlist{
+    height: 90%;
+    justify-content: space-between;
+    color: #007FD6;
+    margin-right: .1rem !important;
+  }

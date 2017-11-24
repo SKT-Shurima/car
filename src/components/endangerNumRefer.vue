@@ -33,6 +33,10 @@
 		},
 		methods:{
 			getCountSearch(){
+				Indicator.open({
+				  text: '加载中...',
+				  spinnerType: 'fading-circle'
+				});
 				let params ={
 					token: this.$root.getCookie('token'),
 					vin: this.query.vin
@@ -42,8 +46,9 @@
 					if (errcode===0) {
 						this.count = content.count;
 					}else{
-						this.$root.errcode(errcode,message);
-					} 
+						this.$root.errorInfo(errcode,message);
+					}
+					Indicator.close(); 
 				})
 			},
 		},

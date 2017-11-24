@@ -15,6 +15,10 @@
 		},
 		methods:{
 			getDangerOneSearch(){
+				Indicator.open({
+				  text: '加载中...',
+				  spinnerType: 'fading-circle'
+				});
 				let params = {
 					token: this.$root.getCookie('token'),
 					vin: this.query.vin
@@ -44,8 +48,9 @@
 						this.overview = overview;
 						this.records = content.records;
 					}else{
-						this.$root.errcode(ercode,message);
+						this.$root.errorInfo(ercode,message);
 					}
+					Indicator.close();
 				})
 			}
 		},
@@ -53,6 +58,7 @@
 			this.$nextTick(()=>{
 				this.query = this.$root.getHashReq();
 				this.getDangerOneSearch();
+				console.log(this.$router)
 			}) 
 		}
 	}

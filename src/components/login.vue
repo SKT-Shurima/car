@@ -12,41 +12,59 @@
 				</dt>
 				<dd class="border-bottom-1px">
 					<i class="icon icon-code"></i>
-					<input type="number" v-model='password' placeholder="请输入密码" >
+					<input type="password" v-model='password' placeholder="请输入密码" >
 				</dd>
 			</dl>
-			<div class="login-btn" @touchstart='login'>
-				<mt-button type="primary" size='small'>登录</mt-button>
+			<div class="login-btn">
+				<mt-button type="primary" size='small' @touchstart.native='login'>登录</mt-button>
 			</div>
 		</div>
 	</div>
 </template>
 <script type="text/javascript">
 	import {login} from  '../assets/js/api';
+	import md5 from 'md5';
 	export default {
 		data(){
 			return {
-				phone: '',
-				password: '',
+				phone: '15158417521',
+				password: '123456',
 			}
 		},
 		methods:{
 			login(){
-				let params = {
-					phone: 15158417521,
-					password: "e10adc3949ba59abbe56e057f20f883e"
-				}
-				login(params).then(res=>{
-					let {errcode,message,content} = res;
-					if (errcode===0) {
-						this.$root.setCookie('token',content.token,2);
-						this.$router.replace('/home');
+				let phoneBol = this.$root.checkPhone(this.phone),passwordBol;
+				if (phoneBol) {
+					passwordBol = this.$root.checkVal(this.password,'请输入密码');
+					if (passwordBol) {
+						let params = {
+							phone: this.phone,
+							password: md5(this.password)
+						}
+						login(params).then(res=>{
+							let {errcode,message,content} = res;
+							if (errcode===0) {
+								this.$root.setCookie('token',content.token,24*7);
+								this.$router.replace('/home');
+							}else{
+								Toast({
+			                      message: message,
+			                      position: 'middle',
+			                      duration: 3000
+			                    });
+							}
+						})
+					}else{
+						return false;
 					}
-				})
+				}else{
+					return false;
+				}
 			}
 		},
 		mounted(){
 			this.$nextTick(()=>{
+				this.login();
 			})
 		}
 	}

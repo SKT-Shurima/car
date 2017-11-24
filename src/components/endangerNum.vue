@@ -6,7 +6,7 @@
   			</span>
   		</mt-header>
 		<div class="contain">
-			<v-search :search-info='searchInfo'></v-search>
+			<v-search :search-info='searchInfo' @sendval='getval'></v-search>
 		</div>
 	</div>
 </template>
@@ -20,12 +20,20 @@
 					placeholder: '17位车架号(VIN)',
 					btn: '查询',
 					img: './static/img/maintain.png',
-					path: '/endangerNumRefer'
 				}
 			}
 		},
 		components: {
 			vSearch
+		},
+		methods: {
+			getval(vin){
+				let vinBol = this.$root.checkVin(vin);
+				if (vinBol) {
+					vin = vin.trim();
+					this.$router.push({path: '/endangerNumRefer', query: {vin:vin}});
+				}
+			}
 		}
 	}
 </script>

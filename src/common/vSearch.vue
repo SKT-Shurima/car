@@ -7,7 +7,7 @@
 			<dt v-text='searchInfo.title'></dt>
 			<dd>
 				<div>
-					<input type="text" name="" :placeholder="searchInfo.placeholder" v-model='vin' @keyup="vin=vin.toUpperCase()">
+					<input type="text" name="" :placeholder="searchInfo.placeholder" v-model='val' @keyup="val=val.toUpperCase()">
 				</div>
 				<div>
 					<mt-button type="primary" size='small' @touchstart.native='check'>{{searchInfo.btn}}</mt-button>
@@ -20,7 +20,7 @@
 	export default {
 		data(){
 			return {
-				vin: ''
+				val: ''
 			}
 		},
 		props: {
@@ -28,16 +28,7 @@
 		},
 		methods: {
 			check(){
-				if (!this.vin) {
-					Toast({
-					  message: '提示',
-					  position: 'middle',
-					  duration: 3000
-					});
-					return false;
-				}
-				let path = this.searchInfo.path;
-				this.$router.push({path: path, query:{vin: this.vin}});
+				this.$emit('sendval',this.val);
 			}
 		}
 	}

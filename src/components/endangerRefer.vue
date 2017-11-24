@@ -7,7 +7,7 @@
   		</mt-header>
   		<div class="contain">
   			<div class="seach-res">
-  				查询车辆: jdhscbdcdsb
+  				查询车辆: {{query.vin}}
   			</div>
   			<div class="overview">
   				<table cellspacing="0"  class="table-list">
@@ -55,9 +55,17 @@
 <script type="text/javascript">
 	import {dangerOneSearch}  from '../assets/js/api';
 	export default {
+		data(){
+			return {
+				query: {}
+			}
+		},
 		props: {
 			overview: Array,
 			records: Array
+		},
+		created(){
+			this.query = this.$root.getHashReq();
 		}
 	}
 </script>

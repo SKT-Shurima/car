@@ -6,7 +6,7 @@
   			</span>
   		</mt-header>
 		<div class="contain">
-			<v-search :search-info='searchInfo'></v-search>
+			<v-search :search-info='searchInfo' @sendval='getval'></v-search>
 		</div>
 	</div>
 </template>
@@ -19,13 +19,21 @@
 					title: '请输入您想要查询的车架号(VIN)',
 					placeholder: '17位车架号(VIN)',
 					btn: '查询',
-					img: './static/img/maintain.png',
-					path: '/endangerMain'
+					img: './static/img/maintain.png'
 				}
 			}
 		},
 		components: {
 			vSearch
+		},
+		methods: {
+			getval(vin){
+				let vinBol = this.$root.checkVin(vin);
+				if (vinBol) {
+					vin = vin.trim();
+					this.$router.push({path: '/endangerMain', query: {vin:vin}});
+				}
+			}
 		}
 	}
 </script>

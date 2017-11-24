@@ -82,14 +82,14 @@
 		},
 		methods:{
 			getUpkeepSearch(){
-				let params = {
-					token: this.$root.getCookie('token'),
-					vin: this.query.vin
-				}
 				Indicator.open({
 				  text: '加载中...',
 				  spinnerType: 'fading-circle'
 				});
+				let params = {
+					token: this.$root.getCookie('token'),
+					vin: this.query.vin
+				}
 				upkeepSearch(params).then(res=>{
 					let {errcode,message,content} = res;
 					if(errcode===0){

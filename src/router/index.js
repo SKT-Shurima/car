@@ -14,6 +14,8 @@ import history from '@/components/history';
 import saleCar from '@/components/saleCar';
 import explain from '@/components/explain';
 import imgDetail from  '@/components/imgDetail';
+import chooseCity from '@/components/chooseCity';
+import nofind from '@/components/nofind';
 
 Vue.use(Router)
 
@@ -74,8 +76,14 @@ export default new Router({
       path: '/saleCar',
       component: saleCar
     },{
-      path: 'explain',
+      path: '/explain',
       component: explain
+    },{
+      path: '/chooseCity',
+      component: chooseCity
+    },{
+      path: '*',
+      component: nofind
     }
   ]
 })

@@ -6,7 +6,7 @@
   			</span>
   		</mt-header>
   		<div class='contain'>
-  			<ul>
+  			<ul v-if='history.length'>
   				<li v-for='item in history' class='border-bottom-1px history-list'>
   					<dl>
   						<dt>
@@ -23,6 +23,9 @@
   					</dl>
   				</li>
   			</ul>
+  			<div class="no-contain">
+  				暂无数据
+  			</div>
   		</div>
 	</div>
 </template>
@@ -36,6 +39,10 @@
 		},
 		methods:{
 			getHistoryInfo(){
+				Indicator.open({
+				  text: '加载中...',
+				  spinnerType: 'fading-circle'
+				});
 				let params = {
 					token: this.$root.getCookie('token')
 				}
@@ -44,8 +51,9 @@
 					if (errcode===0) {
 						this.history = content.history;
 					}else{
-						this.$root.errcode(ercode,message);
+						this.$root.errorInfo(ercode,message);
 					}
+					Indicator.close();
 				})
 			},
 			del(id){
@@ -59,7 +67,7 @@
 						if (errcode ===0 ) {
 							this.getHistoryInfo();
 						}else{
-							this.$root.errcode(errcode,message);
+							this.$root.errorInfo(errcode,message);
 						}
 					})
 				}).catch(action=>{
